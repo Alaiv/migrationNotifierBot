@@ -1,16 +1,21 @@
 import java.sql.*;
 
 public class DB {
-    private final String URL = "enter db url";
-    private final String NAME  = "enter user name";
-    private final String PASS = "enter password";
+    private final String URL = "jdbc:postgresql://{ENTER DB URL + PORT}/{ENTER DB NAME}?allowMultiQueries=true";
+    private final String NAME  = "{ENTER DB USERNAME}";
+    private final String PASS = "{ENTER DB PASSWORD}";
     public int getBadJobStateCount() {
         String query = "select count(\"Id\") ids from \"SliceBasedOnRoadJobs\" where \"SliceState\" = 3;";
         return executeQuery(query);
     }
 
-    public int getGoodJobStateCount() {
+    public int getWaitJobStateCount() {
         String query = "select count(\"Id\") ids from \"SliceBasedOnRoadJobs\" where \"SliceState\" = 0;";
+        return executeQuery(query);
+    }
+
+    public int getInProgressJobStateCount() {
+        String query = "select count(\"Id\") ids from \"SliceBasedOnRoadJobs\" where \"SliceState\" = 1;";
         return executeQuery(query);
     }
 
