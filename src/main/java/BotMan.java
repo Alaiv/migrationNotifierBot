@@ -6,8 +6,8 @@ import java.net.http.HttpResponse;
 import java.time.Duration;
 
 public class BotMan {
-    private static final String CHAT_ID = "-4047469857";
-    private static final String TOKEN = "6615790550:AAFXfrI7G9ndWOeOasFV-H6BnCDqdWlHytU";
+    private static final String CHAT_ID = "enter ur chat id";
+    private static final String TOKEN = "enter ur token";
 
     public static void main(String[] args) throws IOException, InterruptedException {
         System.out.println("Бот успешно запущен.");
